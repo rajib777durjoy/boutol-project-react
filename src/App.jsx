@@ -1,88 +1,62 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-import Boutol from './component/boutol'
-import "./component/Boutol.css"
+import Phone from './component/phone'
+import { getItemfun, SetItemsfun,removefun} from './component/localStorage'
 
 
-// category
-// : 
-// "Bottle"
-// id
-// : 
-// "9e7cda87-8160-458f-bd32-ecf253a2d86a"
-// img
-// : 
-// "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a9c04ca9fa51408faf2fac8e0117abb9_9366/Steel_Metal_Bottle_1L_Black_EX7288_01_standard.jpg"
-// name
-// : 
-// "Steel Metal Bottle 1L"
-// price
-// : 
-// 33
-// quantity
-// : 
-// 0
-// ratings
-// : 
-// 4
-// ratingsCount
-// : 
-// 62
-// seller
-// : 
-// "Addidas"
-// shipping
-// : 
-// 15
-// stock
-// : 
-// 7
 
 function App() {
-  const [boutolId,setboutol]=useState([])
+   
+  /// set phone data ///
+  const [phoneData,setPhoneData]=useState([])
 
-  const [getdata,setdata]=useState([])
+  const [cards,setcards]=useState([])
+ 
+  /// get array of object to phone.json file ///
+  useEffect(()=>{
+    fetch('../public/phone.json')
+    .then(respons=>{
+      return respons.json()
+    })
+    .then(Details=>setPhoneData(Details))
+  },[])
+   
 
-  const [count, setcount]=useState(0)
+  useEffect(()=>{
+    let saveData=[]
+    if(phoneData.length>0){
+    //  console.log(getItemfun())
+     for(let item of getItemfun()){
+      //  console.log(item[0])
+       let result=phoneData.find((phone)=>phone.brand===item[0] && phone.model === item[1])
+       if(result){
+        saveData.push(result)
+       }
+     }
+     setcards(saveData)
+    }
+   
+  },[phoneData])
+ 
 
-   useEffect(()=>{
-     fetch('../public/Boutol.json')
-     .then(res=>res.json())
-     .then(data=>setboutol(data))
-   },[])
-   const handelfun=(boutolDatas)=>{
-    let dataArray=[...getdata ,boutolDatas]
-     setdata(dataArray)
-     setcount(count+1)
-   }
+
+
+  const [storeArr,setStoreArr]=useState([])
+  // click event function genarate ///
+  const handelfun=(brand,model)=>{
+    let arr=[brand,model]
+    setStoreArr(arr)
+   SetItemsfun(storeArr)
+  }
+  
   return (
     <>
-     <h1>{count}</h1>
-     <div className='boutol2'>
-       
-       {
-        getdata.map(event=><div className='childdiv'>
-          <li>name:{event.name}</li>
-          <img src={event.img} alt="" className='childImg'/>
-          <li>price:{event.price}</li>
-        </div>)
-
-      }
-   
-     </div>
-     <br />
-     <hr />
-     <br />
-      <div className='boutol'>
-      {
-        boutolId.map((e)=><Boutol datas={e} handelfun={handelfun}></Boutol>)
-      }
-      </div>
-      <h1>boutol card project</h1>
-      
+     <div>
      
+      {phoneData.map((event=><Phone brand={event.brand} model={event.model} handelfun={handelfun} card={cards.length} removefun={removefun}></Phone>))}
+       
+     </div>
     </>
   )
 }

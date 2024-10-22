@@ -1,0 +1,103 @@
+[
+    {
+      "brand": "Apple",
+      "model": "iPhone 14 Pro",
+      "storage": "256GB",
+      "ram": "6GB",
+      "battery": "3095mAh",
+      "camera": "48MP",
+      "price": 1099,
+      "os": "iOS 17"
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S23 Ultra",
+      "storage": "512GB",
+      "ram": "12GB",
+      "battery": "5000mAh",
+      "camera": "200MP",
+      "price": 1399,
+      "os": "Android 13"
+    },
+    {
+      "brand": "OnePlus",
+      "model": "OnePlus 11",
+      "storage": "128GB",
+      "ram": "8GB",
+      "battery": "4500mAh",
+      "camera": "50MP",
+      "price": 799,
+      "os": "Android 13"
+    },
+    {
+      "brand": "Google",
+      "model": "Pixel 8 Pro",
+      "storage": "256GB",
+      "ram": "12GB",
+      "battery": "4950mAh",
+      "camera": "50MP",
+      "price": 999,
+      "os": "Android 14"
+    },
+    {
+      "brand": "Xiaomi",
+      "model": "Mi 13",
+      "storage": "256GB",
+      "ram": "12GB",
+      "battery": "4500mAh",
+      "camera": "108MP",
+      "price": 899,
+      "os": "Android 13"
+    },
+    {
+      "brand": "Oppo",
+      "model": "Find X6 Pro",
+      "storage": "512GB",
+      "ram": "16GB",
+      "battery": "5000mAh",
+      "camera": "50MP",
+      "price": 1199,
+      "os": "Android 13"
+    },
+    {
+      "brand": "Sony",
+      "model": "Xperia 1 V",
+      "storage": "256GB",
+      "ram": "12GB",
+      "battery": "5000mAh",
+      "camera": "48MP",
+      "price": 1199,
+      "os": "Android 13"
+    },
+    {
+      "brand": "Huawei",
+      "model": "Mate 50 Pro",
+      "storage": "256GB",
+      "ram": "8GB",
+      "battery": "4700mAh",
+      "camera": "50MP",
+      "price": 1099,
+      "os": "HarmonyOS"
+    },
+    {
+      "brand": "Asus",
+      "model": "ROG Phone 7",
+      "storage": "512GB",
+      "ram": "16GB",
+      "battery": "6000mAh",
+      "camera": "50MP",
+      "price": 1299,
+      "os": "Android 13"
+    },
+    {
+      "brand": "Realme",
+      "model": "GT 3",
+      "storage": "256GB",
+      "ram": "12GB",
+      "battery": "4600mAh",
+      "camera": "64MP",
+      "price": 699,
+      "os": "Android 13"
+    }
+  ]
+  
